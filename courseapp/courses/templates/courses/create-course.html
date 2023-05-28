@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'courses/css/style.css' %}">
+{% endblock css_files %}
+
+
+
+{% block content %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            {% comment %} {% if error %}
+            <div class="alert alert-danger">
+                {{msg}}
+            </div>
+            {% endif %} {% endcomment %}
+           <form action=" {% url 'create_course' %}" method='POST' novalidate enctype='multipart/form-data'>
+            {% csrf_token %}
+
+            {% include 'partials/_form.html' %}
+
+            <button type="submit" class='btn btn-primary'>Kaydet</button>
+           </form>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block page_title %}
+    Create Course
+{% endblock page_title %}
+
+
+
+{% block js_files %}
+ <script src="{% static 'courses/js/script.js' %}"></script>
+{% endblock js_files %}
+
