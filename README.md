@@ -1,0 +1,2 @@
+# DjangoCourseApp
+Django Kurs Uygulaması 
